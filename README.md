@@ -18,8 +18,8 @@ Käyttöönotto ilman Dockeria (dev)
     sqlite3 diary.db < schema.sql
     sqlite3 diary.db < seed.sql
     ```
-- asenna backendin riippuvuudet: `cd diary-app/backend && composer install`
-- alusta frontend: `cd diary-app/diary && npm install`
+- asenna backendin riippuvuudet: `cd diary-app/backend/ && composer install`
+- alusta frontend: `cd diary-app/diary/ && npm install`
 - muuta `diary-app/diary/src/api/index.js` tiedostossa
     ```
     const api = axios.create({
@@ -39,4 +39,4 @@ Käyttöönotto ilman Dockeria (dev)
     })
     ```
 - käynnistä backend: `php -S localhost:8000 -t diary-app/backend/public`
-- käynnistä frontend: `cd diary-app/diary && npm run dev`
+- käynnistä frontend toisella terminaalilla: `cd diary-app/diary/ && npm run dev`
