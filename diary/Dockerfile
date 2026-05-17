@@ -13,8 +13,7 @@ RUN npm run build
 
 # Production stage with Nginx
 FROM nginx:stable-alpine as production-stage
-
-# Copy built files from build stage
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
 # Expose port

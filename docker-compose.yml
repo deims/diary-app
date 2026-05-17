@@ -3,7 +3,6 @@ services:
     build: ./backend
     container_name: diary-backend
     volumes:
-      # Mount for development with hot reload
       - ./backend/app:/var/www/app/app
       - ./backend/public:/var/www/app/public
       # Persist SQLite database
@@ -22,8 +21,6 @@ services:
     container_name: diary-frontend
     ports:
       - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - backend
     networks:
