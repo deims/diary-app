@@ -13,15 +13,13 @@ Käyttöönotto ilman Dockeria (dev)
 - vaatimukset: sqlite, php, sqlite driver php:lle, composer, npm
 - kloonaa repo: `git clone git@github.com:deims/diary-app.git`
 - rakenna tietokanta:
-    `cd diary-app/backend/database`
-    `sqlite3 diary.db < schema.sql`
-    `sqlite3 diary.db < seed.sql`
-- asenna backendin riippuvuudet:
-    `cd diary-app/backend/`
-    `composer install`
-- alusta frontend:
-    `cd diary-app/diary`
-    `npm install`
+    ```
+    cd diary-app/backend/database
+    sqlite3 diary.db < schema.sql
+    sqlite3 diary.db < seed.sql
+    ```
+- asenna backendin riippuvuudet: `cd diary-app/backend && composer install`
+- alusta frontend: `cd diary-app/diary && npm install`
 - muuta `diary-app/diary/src/api/index.js` tiedostossa
     ```
     const api = axios.create({
