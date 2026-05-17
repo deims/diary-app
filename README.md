@@ -7,8 +7,8 @@ Käyttöönotto Dockerilla
 - aja kontit: `./start.sh` tai `docker-compose up -d`
 - lopeta: `./stop.sh` tai `docker-compose down`
 
-Käyttöönotto ilman Dockeria (dev)
-=================================
+Käyttöönotto ilman Dockeria 
+============================
 
 - vaatimukset: sqlite, php, sqlite driver php:lle, composer, npm
 - kloonaa repo: `git clone git@github.com:deims/diary-app.git`
