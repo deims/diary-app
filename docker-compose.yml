@@ -1,0 +1,39 @@
+services:
+  backend:
+    build: ./backend
+    container_name: diary-backend
+    volumes:
+      # Mount for development with hot reload
+      - ./backend/app:/var/www/app/app
+      - ./backend/public:/var/www/app/public
+      # Persist SQLite database
+      #- sqlite-data:/var/www/app/database
+    ports:
+      - "8000:8000"
+    environment:
+      - PHP_IDE_CONFIG=serverName=localhost
+      - DB_PATH=/var/www/app/database/diary.db
+    networks:
+      - diary-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./diary
+    container_name: diary-frontend
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+    networks:
+      - diary-network
+    restart: unless-stopped
+
+volumes:
+  sqlite-data:
+    driver: local
+
+networks:
+  diary-network:
+    driver: bridge
