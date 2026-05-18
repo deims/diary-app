@@ -40,3 +40,11 @@ Käyttöönotto ilman Dockeria
     ```
 - käynnistä backend: `php -S localhost:8000 -t diary-app/backend/public`
 - käynnistä frontend toisella terminaalilla: `cd diary-app/diary/ && npm run dev`
+
+Käytöstä:
+=========
+
+- Tietokannassa on tekoälyllä generoitua dataa mukaanlukien käyttäjiä.
+- Pääkäyttäjän käyttäjänimi ja salasana ovat Sophia/Sophia.
+- Kaikkien käyttäjien salasana on sama kuin käyttäjänimi.
+- Muut käyttäjät näkee kirjautumalla sisään pääkäyttäjällä ja avaamalla User Management -sivun.
